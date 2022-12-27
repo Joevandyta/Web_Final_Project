@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 use App\Http\Controllers\poinMahasiswaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -14,30 +15,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('poinMahasiswa', poinMahasiswaController::class);
 
-Route::resource('poinMahasiswa', poinMahasiswaController::class);
 
+    Route::get('/', function () {
+        return view('frontPage.dashboard');
+    });
 
-Route::get('/', function () {
-    return view('frontPage.dashboard');
-});
+    Route::get('/poinPorto', function () {
+        return view('frontPage.listPoint');
+    });
+    Route::get('/PApoinPorto', function () {
+        return view('frontPage.PAlistPoint');
+    });
+    Route::get('/', function () {
+        return view('frontPage.dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/poinPorto', function () {
-    return view('frontPage.listPoint');
-});
-
-Route::get('/', function () {
-    return view('frontPage.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/dashboard', function () {
-    return view('frontPage.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('frontPage.dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+ 
 });
-
 require __DIR__.'/auth.php';

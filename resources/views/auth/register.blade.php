@@ -15,7 +15,18 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
-
+        <div class="mt-4">
+            <x-input-label for="role" :value="__('Role')" />
+                <div className="mt-4">
+                    <select
+                    name="role" id="role" className="block w-full mt-1 rounded-md" onChange={onHandleChange} class="block mt-1 w-full"> 
+                    <option value="siswa">Siswa</option>
+                    <option value="pa">Pembimbing Akademik</option>
+                    
+                </select>
+            <Label forInput="role" value="Role" />
+        </div>
+        </div>
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
