@@ -21,7 +21,7 @@
                         <li>
                             <div class="rounded-lg p-4 bg-gray-200">
                                 <i class="fa-solid fa-table-list text-slate-300"></i>
-                                <a href="poinPorto" class="mx-4 text-slate-400 font-semibold">Poin Portfolio</a>
+                                <a href="PAlistPage" class="mx-4 text-slate-400 font-semibold">Poin Portfolio</a>
                             </div>
                         </li>
                     </ul>
@@ -196,7 +196,7 @@
                 <div class="flex-row w-full sm:flex-auto sm:w-7/12 rounded-2xl p-2">
                     <div class="flex flex-row rounded-2xl bg-white h-full p-6">
                         <div class="flex-none my-auto  w-9/12">
-                            <h2 class="text-slate-400 text-sm md:text-lg">Pembimbing akamdemik :</h2>
+                            <h2 class="text-slate-400 text-sm md:text-lg">INI DASHBOARD PA Pembimbing akamdemik :</h2>
                             <p class="font-semibold text-sm lg:text-2xl text-slate-500 w-28 lg:w-full">I Nyoman Saputra Wahyu Wijaya, S.Kom., M.Cs.</p>
                         </div>
 

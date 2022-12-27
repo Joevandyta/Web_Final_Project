@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('tglKegiatan');
             $table->integer('semester');
             $table->string('bukti');
+            $table->integer('author_id');
             $table->timestamps();
         });
     }

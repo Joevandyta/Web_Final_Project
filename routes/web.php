@@ -18,24 +18,28 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('poinMahasiswa', poinMahasiswaController::class);
 
+    Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class, "home"]);
 
-    Route::get('/', function () {
-        return view('frontPage.dashboard');
+    Route::group(['middleware' => 'checkRole:student'], function() {
+        
+        Route::get('/', function () {
+            return view('frontPage.dashboard');
+        })->name('dashboard');
+        Route::get('/poinPorto', function () {
+            return view('frontPage.listPoint');
+        });
+
+    });
+    Route::group(['middleware' => 'checkRole:pa'], function() {
+        Route::get('/PADashboard', function () {
+            return view('BackPage.LectureDashboard');
+        });
+        Route::get('/PAlistPage', function () {
+            return view('BackPage.lecturerPage');
+        });
     });
 
-    Route::get('/poinPorto', function () {
-        return view('frontPage.listPoint');
-    });
-    Route::get('/PApoinPorto', function () {
-        return view('frontPage.PAlistPoint');
-    });
-    Route::get('/', function () {
-        return view('frontPage.dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
-
-    Route::get('/dashboard', function () {
-        return view('frontPage.dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    
     
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

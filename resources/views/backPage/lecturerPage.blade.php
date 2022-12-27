@@ -101,7 +101,7 @@
 
         <!-- Main modal Update-->
 
-        
+
         <!-- sidebar -->
         <div class="w-3/12 absolute sm:relative bg-white h-screen rounded-r-3xl shadow md:h-screen flex-col justify-between hidden md:flex">
             <div class="p-4">
@@ -113,7 +113,7 @@
                         <li>
                             <div class="rounded-lg p-4 bg-gray-200">
                                 <i class="fa-solid fa-house text-slate-400"></i>
-                                <a href="/" class="mx-4 text-slate-400">Dashboard</a>
+                                <a href="/PADashboard" class="mx-4 text-slate-400">Dashboard</a>
                             </div>
                         </li>
                     </ul>
@@ -233,30 +233,30 @@
                 <div class="overflow-x-auto relative bg-white rounded-2xl p-4">
                     <div class="px-2">
                         <h2 class="text-4xl text-slate-500 my-3">Portfolio Mahasiswa</h2>
-                        
+
                         <br>
-                         <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
+                        <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
                             <div class="dataTables_length" id="myTable_length">
                                 <label>Filter <select name="myTable_length" aria-controls="myTable" class="text-center">
-                                    <option value="allkind">All</option>
-                                    <option value="belum">Belum Divalidasi</option>
-                                    <option value="terima">Divalidasi Diterima</option>
-                                    <option value="tolak">Validasi Ditolak</option>
-                                    
-                                </select>
-                                <label>Semester <select name="myTable_length" aria-controls="myTable" class="text-center">
-                                    <option value="allsmt">All</option> 
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    
-                                </select>
-                            </div> 
+                                        <option value="allkind">All</option>
+                                        <option value="belum">Belum Divalidasi</option>
+                                        <option value="terima">Divalidasi Diterima</option>
+                                        <option value="tolak">Validasi Ditolak</option>
+
+                                    </select>
+                                    <label>Semester <select name="myTable_length" aria-controls="myTable" class="text-center">
+                                            <option value="allsmt">All</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+
+                                        </select>
+                            </div>
                         </div>
                     </div>
                     <table class="w-full text-sm text-left text-slate-500 " id="myTabl">
@@ -274,13 +274,13 @@
                                 <th scope="col" class="py-3 px-6">Action</th>
 
 
-                                
+
                             </tr>
                         </thead>
-                        
+
                         <tbody>
 
-                            
+
                             <tr class="bg-white border-b">
                                 <th scope="row" class="py-4 px-6 font-medium whitespace-nowrap text-slate-400">1</th>
                                 <td class="py-4 px-6">Joe</td>
@@ -292,8 +292,8 @@
                                 <td class="py-4 px-6"><a href="#" class="underline">Lihat Bukti</a></td>
                                 <td class="py-4 px-6 text-yellow-500 font-semibold">Belum DIvalidasi</td>
                                 <td class="py-4 px-6 font-semibold">
-    
-                                        <button type="button" class="showModal text-white  bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" type="button" onclick="modalHandlerEdit(true)">Validasi</button>
+
+                                    <button type="button" class="showModal text-white  bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" type="button" onclick="modalHandlerEdit(true)">Validasi</button>
 
                             </tr>
                             <tr class="bg-white border-b">
@@ -328,12 +328,12 @@
                                     <form action="" method="Post">
 
                                         <button type="button" disabled class="showModal text-white  bg-gradient-to-r from-gray-600 to-gray-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" type="button" onclick="modalHandlerEdit(true)">Validasi</button>
-                                       
+
                                     </form>
                                 </td>
                             </tr>
-                        </tbody> 
-                        
+                        </tbody>
+
                     </table>
                 </div>
             </div>

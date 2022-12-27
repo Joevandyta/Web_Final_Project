@@ -17,6 +17,7 @@ class poinMahasiswaController extends Controller
      */
     public function index()
     {
+        
         $data = poinMahasiswa::orderBy('id_poin', 'asc');
         return DataTables::of($data)
             ->addIndexColumn()

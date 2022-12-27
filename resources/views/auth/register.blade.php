@@ -20,7 +20,7 @@
                 <div className="mt-4">
                     <select
                     name="role" id="role" className="block w-full mt-1 rounded-md" onChange={onHandleChange} class="block mt-1 w-full"> 
-                    <option value="siswa">Siswa</option>
+                    <option value="student">Siswa</option>
                     <option value="pa">Pembimbing Akademik</option>
                     
                 </select>

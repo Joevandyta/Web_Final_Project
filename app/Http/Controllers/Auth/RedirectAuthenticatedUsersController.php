@@ -13,7 +13,7 @@ class RedirectAuthenticatedUsersController extends Controller
             return redirect('/');
         }
         elseif(auth()->user()->role == 'pa'){
-            return redirect('/PApoinPorto');
+            return redirect('/PADashboard');
         }
         else{
             return auth()->logout();
