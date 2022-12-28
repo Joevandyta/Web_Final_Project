@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 use App\Http\Controllers\poinMahasiswaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(['middleware' => 'auth'], function() {
+    
     Route::resource('poinMahasiswa', poinMahasiswaController::class);
 
     Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class, "home"]);
@@ -28,8 +31,14 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/poinPorto', function () {
             return view('frontPage.listPoint');
         });
+        Route::get('/portofolio', function (){
+            return view('frontPage.data');
+        });
 
+        Route::get('/portofolio', [DataController::class,'data'])->middleware(['auth', 'verified'])->name('data');
     });
+
+    
     Route::group(['middleware' => 'checkRole:pa'], function() {
         Route::get('/PADashboard', function () {
             return view('BackPage.LectureDashboard');
@@ -44,6 +53,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
- 
+    
 });
 require __DIR__.'/auth.php';

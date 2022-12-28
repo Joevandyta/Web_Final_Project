@@ -21,7 +21,9 @@ return new class extends Migration
             $table->date('tglKegiatan');
             $table->integer('semester');
             $table->string('bukti');
-            $table->integer('author_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references(columns:'id')->on( table:'users');
+
             $table->timestamps();
         });
     }

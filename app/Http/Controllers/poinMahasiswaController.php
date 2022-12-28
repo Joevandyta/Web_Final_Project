@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\poinMahasiswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 // use DataTables;
 use Yajra\DataTables\Facades\DataTables;
@@ -15,8 +16,16 @@ class poinMahasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function userData($id){
+        
+        // return view('layouts.app')->with('id', $user_id);
+    }
+    
     public function index()
     {
+        
+ 
         
         $data = poinMahasiswa::orderBy('id_poin', 'asc');
         return DataTables::of($data)
@@ -45,6 +54,7 @@ class poinMahasiswaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validasi = Validator::make($request->all(), [
             'namaKegiatan' => 'required',
             'kategori' => 'required',

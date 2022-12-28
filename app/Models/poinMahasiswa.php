@@ -17,6 +17,6 @@ class poinMahasiswa extends Model
         'tglKegiatan',
         'semester',
         'bukti',
-        'author_id'
+        'user_id'
     ];
 }
